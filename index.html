@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Trang chủ - ADIDAS VIETNAM</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+	<link href="css/nav-bar.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="d-flex justify-content-between text-primary bg-dark py-1 container-fluid">
+		<span class='col-3'></span>
+		<span class="clock col-6 d-flex justify-content-center"></span>
+		<span class='col-3 d-flex justify-content-center user-login-info text-white'></span>
+	</div>
+	<nav class="sticky-top">
+		<div class="nav-bar d-flex py-3 container-fluid overflow-hidden">
+			<div class="nav-bar-logo col-2 "><a class="d-flex justify-content-center" href="#"><img alt="" class="logo w-75"
+						src="img/logo.png"></a>
+			</div>
+			<div class="nav-bar-menu col-8 d-flex align-items-center">
+				<ul class="container-fluid d-flex justify-content-center list-unstyled align-items-center my-0">
+					<li class="nav-bar-item px-3"><a class="nav-bar-item-link" href="index.html">Trang Chủ</a></li>
+					<li class="nav-bar-item px-3"><a class="nav-bar-item-link" href="pages/about.html">Giới
+							Thiệu</a></li>
+					<li class="nav-bar-item px-3"><a class="nav-bar-item-link" href="#">Sản Phẩm</a></li>
+					<li class="nav-bar-item px-3"><a class="nav-bar-item-link" href="#">Tin Tức</a></li>
+				</ul>
+			</div>
+			<ul class="nav-bar-icon list-unstyled d-flex align-items-center my-0 justify-content-center">
+				<li>
+					<a href="#">
+						<span class="nav-bar-icon-item">
+							<svg class="bi bi-search" fill="currentColor" height="25" viewBox="0 0 16 16" width="25"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+							</svg>
+						</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="#" onclick="displayUser();"><span class="nav-bar-icon-item">
+							<svg class="bi bi-person" fill="currentColor" height="30" viewBox="0 0 16 16" width="30"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+							</svg></span></a>
+					<div class="user-info position-absolute text-nowrap w-25">
+					</div>
+				</li>
+				<li>
+					<span class="bag-icon" onclick="displayCart();">
+						<span class="nav-bar-icon-item position-relative">
+							<svg class="bi bi-bag" fill="currentColor" height="25" viewBox="0 0 16 16" width="25"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+							</svg>
+							<span class="cart-amount">0</span>
+						</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="cart overflow-hidden">
+			<p class="mt-3 fw-bold text-center empty-cart">GIỎ HÀNG CỦA BẠN TRỐNG</p>
+			<div class="cart-summary container-fluid d-flex justify-content-between px-3 py-3 align-items-center">
+				<div class="summary-info">
+					<span>Tổng Tiền:</span>
+					<span class="summary-total-amount text-danger"></span>
+				</div>
+				<span class="fs-6 nav-bar-icon-item cart-link" onclick="signUpWarning();">THANH TOÁN NGAY</span>
+			</div>
+		</div>
+	</nav>
+	<main class="position-relative bg-light">
+		<div class="slide-show position-relative">
+			<img alt="" class="slide-show-image" src="img/slide-show/0.jpg">
+			<div
+				class="slide-show-control-button w-100 h-100 position-absolute top-0 left-0 d-flex justify-content-between align-items-center">
+				<a class="text-white slide-show-btn" href="#" onclick="browseImage('left');"><span><svg
+							class="bi bi-chevron-left" fill="currentColor" height="150" viewBox="0 0 16 16" width="50"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+								fill-rule="evenodd" />
+						</svg></span></a>
+				<a class="text-white slide-show-btn" href="#" onclick="browseImage('right');"><span><svg
+							class="bi bi-chevron-right" fill="currentColor" height="150" viewBox="0 0 16 16" width="50"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+								fill-rule="evenodd" />
+						</svg></span></a>
+			</div>
+			<div class="slide-show-bottom-button d-flex justify-content-center">
+				<a class="slide-show-bottom-button-item slide-show-btn slide-show-bottom-button-item-active"></a>
+				<a class="slide-show-bottom-button-item slide-show-btn"></a>
+				<a class="slide-show-bottom-button-item slide-show-btn"></a>
+			</div>
+		</div>
+		<div class="popular-container d-flex flex-column align-items-center mt-3">
+			<h3 class="popular-label">POPULAR RIGHT NOW</h3>
+			<div class="">
+				<a class="popular-item" href="">ULTRABOOST 21</a>
+				<a class="popular-item" href="">NMD</a>
+				<a class="popular-item" href="">SUPER STAR</a>
+				<a class="popular-item" href="">SLIDES</a>
+			</div>
+		</div>
+		<div class="category-container d-flex justify-content-center mt-3">
+			<div class="category-box col-3  position-relative">
+				<img alt="" class="w-100" src="img/men.jpg">
+			</div>
+			<div class="category-box col-3 mx-4 position-relative">
+				<img alt="" class="w-100" src="img/women.jpg">
+			</div>
+			<div class="category-box col-3 bg-danger position-relative">
+				<img alt="" class="w-100" src="img/kid.jpg">
+			</div>
+		</div>
+		<div class="new-arrivals-container">
+			<h5 class="container-fluid mt-3 mx-3">NEW ARRIVALS</h5>
+			<div class="product-row container-fluid d-flex justify-content-center">
+				<!--				<div class="product-container col-2 px-2">-->
+				<!--					<img alt="" class="pr-img img-fluid" src="img/product-1.1.jfif">-->
+				<!--					<div class="pr-thumbnail-container pt-1">-->
+				<!--						<img alt="" class="pr-thumb img-thumbnail" src="img/product-1.1.jfif">-->
+				<!--						<img alt="" class="pr-thumb img-thumbnail" src="img/product-1.2.jfif">-->
+				<!--						<img alt="" class="pr-thumb img-thumbnail" src="img/product-1.3.jfif">-->
+				<!--					</div>-->
+				<!--					<div class="pr-info d-flex flex-column">-->
+				<!--						<span class="pr-type">Men Originals</span>-->
+				<!--						<span class="pr-name">NMD_R1</span>-->
+				<!--						<span class="pr-price">3400000 VND</span>-->
+				<!--					</div>-->
+				<!--					<div class="d-flex justify-content-end my-2 position-relative">-->
+				<!--						<button class="pr-btn add-to-cart m-1">Mua Ngay</button>-->
+				<!--&lt;!&ndash;						<div class="pr-btn add-to-cart m-1 fake-btn text-nowrap">Mua Ngay</div>&ndash;&gt;-->
+				<!--						&lt;!&ndash;								<button class="view-more m-1">Xem Thêm</button>&ndash;&gt;-->
+				<!--					</div>-->
+				<!--				</div>-->
+				<div class="product-container col-2 px-2">
+					<img alt="" class="pr-img img-fluid" src="img/product-1.1.jpg">
+					<div class="pr-thumbnail-container pt-1">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-1.1.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-1.2.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-1.3.jpg">
+					</div>
+					<div class="pr-info d-flex flex-column">
+						<span class="pr-type">Men Originals</span>
+						<span class="pr-name">NMD_R1</span>
+						<span class="pr-price">3400000 VND</span>
+					</div>
+					<div class="d-flex justify-content-end my-2 position-relative">
+						<button class="pr-btn add-to-cart m-1">Mua Ngay</button>
+						<!--						<div class="pr-btn add-to-cart m-1 fake-btn text-nowrap">Mua Ngay</div>-->
+						<!--								<button class="view-more m-1">Xem Thêm</button>-->
+					</div>
+				</div>
+				<div class="product-container col-2 px-2">
+					<img alt="" class="pr-img img-fluid" src="img/product-2.1.jpg">
+					<div class="pr-thumbnail-container pt-1">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-2.1.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-2.2.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-2.3.jpg">
+					</div>
+					<div class="pr-info d-flex flex-column">
+						<span class="pr-type">Men Originals</span>
+						<span class="pr-name">ULTRABOOST 21</span>
+						<span class="pr-price">2600000 VND</span>
+					</div>
+					<div class="d-flex justify-content-end my-2 position-relative">
+						<button class="pr-btn add-to-cart m-1">Mua Ngay</button>
+						<!--						<div class="pr-btn add-to-cart m-1 fake-btn text-nowrap">Mua Ngay</div>-->
+						<!--								<button class="view-more m-1">Xem Thêm</button>-->
+					</div>
+				</div>
+				<div class="product-container col-2 px-2">
+					<img alt="" class="pr-img img-fluid" src="img/product-3.1.jpg">
+					<div class="pr-thumbnail-container pt-1">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-3.1.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-3.2.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-3.3.jpg">
+					</div>
+					<div class="pr-info d-flex flex-column">
+						<span class="pr-type">Unisex</span>
+						<span class="pr-name">Tee T-shirt</span>
+						<span class="pr-price">600000 VND</span>
+					</div>
+					<div class="d-flex justify-content-end my-2 position-relative">
+						<button class="pr-btn add-to-cart m-1">Mua Ngay</button>
+						<!--						<div class="pr-btn add-to-cart m-1 fake-btn text-nowrap">Mua Ngay</div>-->
+						<!--								<button class="view-more m-1">Xem Thêm</button>-->
+					</div>
+				</div>
+				<div class="product-container col-2 px-2">
+					<img alt="" class="pr-img img-fluid" src="img/product-4.1.jpg">
+					<div class="pr-thumbnail-container pt-1">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-4.1.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-4.2.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-4.3.jpg">
+					</div>
+					<div class="pr-info d-flex flex-column">
+						<span class="pr-type">Stansmith Originals</span>
+						<span class="pr-name">Sustainable 2021</span>
+						<span class="pr-price">1900000 VND</span>
+					</div>
+					<div class="d-flex justify-content-end my-2 position-relative">
+						<button class="pr-btn add-to-cart m-1">Mua Ngay</button>
+						<!--						<div class="pr-btn add-to-cart m-1 fake-btn text-nowrap">Mua Ngay</div>-->
+						<!--								<button class="view-more m-1">Xem Thêm</button>-->
+					</div>
+				</div>
+				<div class="product-container col-2 px-2">
+					<img alt="" class="pr-img img-fluid" src="img/product-5.1.jpg">
+					<div class="pr-thumbnail-container pt-1">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-5.1.jpg">
+						<img alt="" class="pr-thumb img-thumbnail" src="img/product-5.2.jpg">
+						<!--						<img alt="" class="pr-thumb img-thumbnail" src="img/product-5.3.jpg">-->
+					</div>
+					<div class="pr-info d-flex flex-column">
+						<span class="pr-type">Kids Backpack</span>
+						<span class="pr-name">FROZEN CLASSIC</span>
+						<span class="pr-price">780000 VND</span>
+					</div>
+					<div class="d-flex justify-content-end my-2 position-relative">
+						<button class="pr-btn add-to-cart m-1">Mua Ngay</button>
+						<!--						<div class="pr-btn add-to-cart m-1 fake-btn text-nowrap">Mua Ngay</div>-->
+						<!--								<button class="view-more m-1">Xem Thêm</button>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--		<div class="cart overflow-hidden">-->
+		<!--			<p class="mt-3 fw-bold text-center empty-cart">GIỎ HÀNG CỦA BẠN TRỐNG</p>-->
+		<!--			<div class="cart-product container-fluid d-flex justify-content-between mt-3">-->
+		<!--				<div class="col-1"></div>-->
+		<!--				<div class="cart-product-info d-flex col-5">-->
+		<!--					<img alt="" class="cart-product-img" src="img/product-1.1.jfif">-->
+		<!--					<div class="d-flex flex-column mx-3">-->
+		<!--						<span class="cart-product-name fw-bold">NMD_R1</span>-->
+		<!--						<span class="cart-product-type ">Nam originals</span>-->
+		<!--					</div>-->
+		<!--				</div>-->
+		<!--				<div class="col-4 d-flex flex-column align-items-center">-->
+		<!--					<div class="cart-product-quantity d-flex">-->
+		<!--						<button class="cart-btn in-btn d-flex justify-content-center align-items-center"-->
+		<!--						        onclick="changeQty(this,'-');"><span>-</span>-->
+		<!--						</button>-->
+		<!--						<div class="cart-btn d-flex justify-content-center align-items-center"><span-->
+		<!--								class="px-2 product-qty">2</span></div>-->
+		<!--						<button class="cart-btn de-btn d-flex justify-content-center align-items-center"-->
+		<!--						        onclick="changeQty(this,'+');"><span>+-->
+		<!--					</span></button>-->
+		<!--					</div>-->
+		<!--					<span class="cart-product-price mt-2" data-price="2000">đ 2000</span>-->
+		<!--				</div>-->
+		<!--				<div class="col-2 d-flex justify-content-end"><a class="remove-btn btn" onclick="removeItem(this);">-->
+		<!--					<svg class="bi bi-trash" fill="red" height="30"-->
+		<!--					     viewBox="0 0 16 16" width="30" xmlns="http://www.w3.org/2000/svg">-->
+		<!--						<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>-->
+		<!--						<path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"-->
+		<!--						      fill-rule="evenodd"/>-->
+		<!--					</svg>-->
+		<!--				</a></div>-->
+		<!--			</div>-->
+		<!--			<div class="cart-summary container-fluid mt-3">-->
+		<!--				<div class="summary-info">-->
+		<!--					<span>Tổng Tiền:</span>-->
+		<!--					<span class="summary-total-amount">3.400.000 VND</span>-->
+		<!--				</div>-->
+		<!--				<a class="fs-6">THANH TOÁN NGAY</a>-->
+		<!--			</div>-->
+		<!--		</div>-->
+	</main>
+	<!-- <div class="modal" id='myModal'>
+	<div class="modal-content">
+
+	</div> -->
+	</div>
+	<footer class="mt-5"><img alt="" class="w-100" src="img/footer.png"></footer>
+	<!-- Firebase -->
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+	<script src="js/firebase.js"></script>
+
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

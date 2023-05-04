@@ -1,0 +1,35 @@
+body {
+  height: 100vh;
+}
+nav{
+  box-shadow: 0 0 10px lightgray;
+}
+#sign-in-form {
+  height: 400px;
+  font-size: smaller;
+  padding: 50px;
+  box-shadow: 0 0 10px lightgray;
+  border-radius: 10px;
+}
+.form-logo {
+  height: 20%;
+}
+.form-input {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid lightblue;
+  color: lightblue;
+  outline: none;
+  /* font-size: smaller; */
+}
+.form-input::placeholder {
+  color: lightblue;
+}
+.form-button {
+  font-weight: bold;
+  color: white;
+  background-color: rgba(30, 173, 173, 0.753);
+  border: none;
+  padding: 5px 0;
+  border-radius: 20px;
+}

@@ -1,0 +1,127 @@
+
+form{
+    height: 600px;
+    width: 80%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 0 0 10px lightgray;
+    transform: scale(0.8) translateY(-60px);
+
+    }
+.sign-in-warning{
+    font-size: 0.75rem;
+    color: #565656;
+    }
+.sign-up-form-container{
+    background-color: white;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+
+    }
+
+.input-container{
+    position: relative;
+    }
+/*
+Show the label at desired position when the
+placeholder of input isn't shown
+*/
+input[type='radio']+label{
+    /*font-size: 0.75rem;*/
+    padding: 0 5px;
+    }
+.input{
+    /*width: 150px;*/
+    outline: none;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #535252;
+    /*font-size: 0.75rem;*/
+    }
+
+.input:focus::placeholder{
+    color: transparent;
+    padding-left: 15px;
+        }
+.input:focus + .input_label {
+    opacity: 0;
+    display: block;
+    font-size: 0.75rem;
+    }
+.input:not(:placeholder-shown)+ .input_label{
+    transform: translate(0, -125%);
+    opacity: 0.7;
+    }
+/*.input-label-active{*/
+/*    transform: translate(0, -125%);*/
+/*    opacity: 0.7;*/
+/*    display: block;*/
+/*    font-size: 0.75rem;*/
+/*    }*/
+.input_label {
+    /* Position the label */
+    left: 0;
+    position: absolute;
+    top: 10px;
+    /* Hide it by default */
+    display: none;
+    transition: all 200ms ease;
+    }
+fieldset{
+    border: none;
+    padding-left: 0;
+    }
+legend{
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1rem;
+
+    }
+
+#birth-day input{
+    width:30px;
+    }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+.error{
+    height: 12px;
+    font-size: 10px;
+    color: red;
+    text-align: center;
+    margin-top: 5px;
+    }
+#pw-error, #bd-error{
+    color: gray;
+    }
+.iconValid{
+    color: green;
+    position: absolute;
+    right: -25px;
+    top: 0;
+    display: none;
+    }
+.form-btn{
+    margin: 20px;
+    padding: 10px 50px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    background-color: #be184f;
+    color: white;
+    /*box-shadow: 0 0 5px #b8003f;*/
+    transition: all 200ms ease;
+    font-weight: bold;
+    font-size: 1.25rem;
+    }
+.form-btn:disabled{
+    background-color: #990033;
+    opacity: 0.8;
+    }
+.form-btn:not(:disabled):hover{
+    transform: translateY(-3px);
+    cursor: pointer;
+    }
+
+

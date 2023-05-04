@@ -1,0 +1,51 @@
+/*body {*/
+/*    padding: 0 15px;*/
+/*}*/
+nav{
+    background: #8a8a8a;
+    }
+main{
+    /*margin-top:70px;*/
+}
+.row {
+    border-bottom: 1px solid lightgray;
+}
+#first-row {
+    background-image: url("../img/adidas-owner.jpg");
+    background-repeat: no-repeat;
+    height: 0;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 40%;
+    overflow: hidden;
+}
+
+#first-row div {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.62);
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+}
+
+#first-row h2 {
+    font-weight: 300;
+    padding: 10px 0;
+    line-height: 1.5;
+}
+
+.text {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: #f3f3f3;
+}
+
+.text p {
+    font-size: 1.025rem;
+}
+
+
+

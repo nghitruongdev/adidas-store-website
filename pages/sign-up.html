@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link href="../css/login.css" rel="stylesheet">
+	<!-- Nunito Google Font -->
+	<link rel="stylesheet" href="../css/nav-bar.css">
+</head>
+
+<body class="bg-light">
+	<div class="d-flex justify-content-center text-primary bg-dark py-1"><span class="clock"></span></div>
+	<nav class="sticky-top">
+		<div class="nav-bar d-flex py-3 container-fluid overflow-hidden">
+			<div class="nav-bar-logo col-2 "><a class="d-flex justify-content-center" href="../index.html"><img alt=""
+						class="logo w-75" src="img/logo.png"></a>
+			</div>
+			<div class="nav-bar-menu col-8 d-flex align-items-center">
+				<ul class="container-fluid d-flex justify-content-center list-unstyled align-items-center my-0">
+					<li class="nav-bar-item px-3"><a class="nav-bar-item-link" href="../index.html">Trang Chủ</a></li>
+					<li class="nav-bar-item px-3"><a class="nav-bar-item-link" href="../pages/about.html">Giới
+							Thiệu</a></li>
+					<li class="nav-bar-item px-3"><a class="nav-bar-item-link" href="#">Sản Phẩm</a></li>
+					<li class="nav-bar-item px-3"><a class="nav-bar-item-link" href="#">Tin Tức</a></li>
+				</ul>
+			</div>
+			<ul class="nav-bar-icon list-unstyled d-flex align-items-center my-0 justify-content-center">
+				<li>
+					<a href="#">
+						<span class="nav-bar-icon-item">
+							<svg class="bi bi-search" fill="currentColor" height="25" viewBox="0 0 16 16" width="25"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+							</svg>
+						</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="#"><span class="nav-bar-icon-item">
+							<svg class="bi bi-person" fill="currentColor" height="30" viewBox="0 0 16 16" width="30"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+							</svg></span></a>
+					<div class="user-info position-absolute text-nowrap w-25">
+					</div>
+				</li>
+				<li>
+					<span class="bag-icon" onclick="displayCart();">
+						<span class="nav-bar-icon-item position-relative">
+							<svg class="bi bi-bag" fill="currentColor" height="25" viewBox="0 0 16 16" width="25"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+							</svg>
+							<span class="cart-amount">0</span>
+						</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="cart overflow-hidden">
+			<p class="mt-3 fw-bold text-center empty-cart">GIỎ HÀNG CỦA BẠN TRỐNG</p>
+			<div class="cart-summary container-fluid d-flex justify-content-between px-3 py-3 align-items-center">
+				<div class="summary-info">
+					<span>Tổng Tiền:</span>
+					<span class="summary-total-amount text-danger"></span>
+				</div>
+				<span class="fs-6 nav-bar-icon-item">THANH TOÁN NGAY</span>
+			</div>
+		</div>
+	</nav>
+	<div class="form-container d-flex justify-content-center position-relative">
+		<form action="" name="sign-up-form" class="d-flex justify-content-center">
+			<img alt="" src="../img/sign-up-banner.jpg" class="sign-up-banner col-6">
+			<div class="sign-up-form-container col-6 d-flex align-items-center justify-content-center flex-column">
+				<!--				<div>-->
+				<!--					<img src="img/logo.png" alt="" id="logo-form">-->
+				<!--				</div>-->
+				<h4 class="mt-2">ĐĂNG KÝ TÀI KHOẢN</h4>
+				<p class="h6 sign-in-warning">Đã có tài khoản? <a href="login.html" class="text-decoration-none">Đăng-nhập</a>
+				</p>
+				<div class="input-container d-flex flex-column col-6 mt-3">
+					<input class="input w-100" type="text" placeholder="Họ" name="ho" id="ho" oninput="checkInput(this,'name');"
+						required data-valid="false" />
+					<label class="input_label">Họ</label>
+					<span class="iconValid"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+							<path
+								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+						</svg></span>
+					<div class="error"></div>
+				</div>
+				<div class="input-container input-container d-flex flex-column col-6 mt-3">
+					<input class="input w-100" type="text" placeholder="Tên" name="ten" id="ten"
+						oninput="checkInput(this,'name');" required data-valid="false" />
+
+					<label class="input_label">Tên</label>
+					<span class="iconValid"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+							<path
+								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+						</svg></span>
+					<div class="error"></div>
+				</div>
+				<fieldset class="col-6 mt-3">
+					<legend>Ngày Sinh</legend>
+					<div id="birth-day" class="d-flex justify-content-center w-100 position-relative">
+						<div class="input-container col-2 mx-3">
+							<input class="input w-100" type="number" placeholder="dd" value="" min="1" max="31" maxlength="2"
+								oninput="checkDate();" data-valid="false" />
+							<label class="input_label">dd</label>
+						</div>
+
+						<div class="input-container  col-2 mx-3">
+							<input class="input w-100" type="number" placeholder="mm" oninput="checkDate();" required
+								data-valid="false" />
+							<label class="input_label">mm</label>
+						</div>
+
+						<div class="input-container  col-2 mx-3">
+							<input class="input w-100" type="number" placeholder="yyyy" oninput="checkDate();" required
+								data-valid="false" />
+							<label class="input_label">yyyy</label>
+						</div>
+						<span class="iconValid"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+								<path
+									d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+							</svg></span>
+					</div>
+
+
+					<div class="error" id="bd-error">Đảm bảo bạn đã đủ từ 14 tuổi trở lên</div>
+				</fieldset>
+				<fieldset class="col-6 mt-3">
+					<legend>GIỚI TÍNH</legend>
+					<div class="d-flex justify-content-around">
+						<div class="">
+							<input id="male" name="gender" type="radio" value="m" checked data-valid="true" />
+							<label for="male">Nam</label>
+						</div>
+						<div class="">
+							<input id="female" name="gender" type="radio" value="f" data-valid="true" />
+							<label for="female">Nữ</label>
+						</div>
+						<div class="">
+							<input id="other" name="gender" type="radio" value="o" data-valid="true" />
+							<label for="other">Khác</label>
+						</div>
+					</div>
+				</fieldset>
+				<div class="input-container col-6 mt-3">
+					<input class="input w-100" type="email" placeholder="Email" name="email" onchange="checkInput(this,'email');"
+						required data-valid="false" />
+
+					<label class="input_label">Email</label>
+					<span class="iconValid"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+							<path
+								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+						</svg></span>
+					<div class="error"></div>
+				</div>
+				<div class="input-container col-6 mt-3">
+
+					<input class="input w-100" type="password" placeholder="Password" name="password"
+						oninput="checkInput(this,'password');" data-valid="false" required />
+
+
+					<label class="input_label">Password</label>
+					<span class="iconValid"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+							<path
+								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+						</svg></span>
+					<div class="error" id="pw-error">Vui lòng đảm bảo mật khẩu dài tối thiểu 8 kí tự</div>
+				</div>
+				<button type="button" class="form-btn" disabled onclick="signUp()">Sign Up</button>
+			</div>
+		</form>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<!--	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+	<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
+	<!--	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+	<!-- Firebase -->
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+
+	<script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyD4nuT5eNSlWM9KKo8S1Zx-KSKYc9CR1LA",
+			authDomain: "web1042--firebaseauth.firebaseapp.com",
+			projectId: "web1042--firebaseauth",
+			storageBucket: "web1042--firebaseauth.appspot.com",
+			messagingSenderId: "16062499435",
+			appId: "1:16062499435:web:bdf7c9b77f6b1b366cff2e",
+			measurementId: "G-R1LTKH90FC"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		//auth and firestore
+		const auth = firebase.auth();
+		const db = firebase.firestore();
+		//update database
+		db.settings({ timestampsInSnapshots: true });
+	</script>
+	<footer><img src="../img/footer.png" alt="" class="w-100"></footer>
+	<!--	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>-->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="../js/index.js"></script>
+	<script src="../js/sign-up.js"></script>
+	<script src='../js/auth.js'></script>
+</body>
+
+</html>
